@@ -264,7 +264,7 @@ hr {
 
 <pre><code class="r">    na_num &lt;- which(is.na(data$steps))
     filled_data &lt;- as.data.frame(data)
-    #The strategy of imputing missing values: let the &#39;NA&#39; equal &#39;5-minute interval&#39; 
+    #The strategy of imputing missing values is let the &#39;NA&#39; equal the mean for that 5-minute interval.
     for(i in na_num){
         filled_data[i,1]=mean_perday[mean_perday[,1]==filled_data[i,3],]$steps
     }

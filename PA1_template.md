@@ -80,7 +80,7 @@ output: html_document
 ```r
     na_num <- which(is.na(data$steps))
     filled_data <- as.data.frame(data)
-    #The strategy of imputing missing values: let the 'NA' equal '5-minute interval' 
+    #The strategy of imputing missing values is let the 'NA' equal the mean for that 5-minute interval.
     for(i in na_num){
         filled_data[i,1]=mean_perday[mean_perday[,1]==filled_data[i,3],]$steps
     }
